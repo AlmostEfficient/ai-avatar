@@ -4,9 +4,9 @@ const bufferToBase64 = (buffer) => {
 };
 
 const generateAction = async (req, res) => {
-  console.log('Received request');
   const key = process.env.HF_AUTH_KEY
   const input = JSON.parse(req.body).input;
+  console.log('Received request, input is:', input);
 
   // Add fetch request to Hugging Face
   const response = await fetch(
