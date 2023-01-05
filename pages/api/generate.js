@@ -33,7 +33,11 @@ const generateAction = async (req, res) => {
     const json = await response.json();
     res.status(503).json(json);
   } else {
+    // console.log('Error:', response.statusText)
+    console.log('Response:', response)
+
     const json = await response.json();
+    console.log("Logging JSON", JSON.stringify(json));
     res.status(response.status).json({ error: response.statusText });
   }
 };
